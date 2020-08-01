@@ -15,6 +15,7 @@
 	.icobtn {
 		height: 100%;	
 		width:20vw;
+		margin-bottom: 2vw;
 	}
 	
 	.icobtn:hover {
