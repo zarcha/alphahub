@@ -1656,3 +1656,15 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+		
+		
+		
+		
+@media (max-width: 800px) {
+	#main article {
+		width: 70vw;
+		font-size: 50%;
+	}
+	
+	
+}

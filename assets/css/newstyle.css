@@ -4,13 +4,13 @@
 	text-align: center; 
 	line-height: 3vw;
 	margin-bottom: 1.5vh; 
-	margin-left: 1vw; 
+	margin-left: 0vw; 
 	opacity: 90%;
 }
 
 #navcontainer {
 	left: 0.3vw; 
-	top: 3vw; 
+	top: 0.6vw; 
 	position: absolute; 
 	opacity: 95%;
 }
