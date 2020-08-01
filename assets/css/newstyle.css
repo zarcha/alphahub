@@ -23,17 +23,18 @@
 		text-align: center; 
 		line-height: 6vw;
 		margin-bottom: 0.5vh; 
-		margin-left: 2vw; 
+		margin-left: 3vw; 
 		opacity: 90%;
 		font-size: 140%;
-		background-color: red;
+		z-index: 100;
 	}
 	
 	#navcontainer {
-		left: 0.1vw; 
+		left: 0.01vw; 
 		top: 4vw; 
 		position: absolute; 
 		opacity: 95%;
+		z-index: 100;
 	}
 
 
