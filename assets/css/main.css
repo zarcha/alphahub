@@ -1662,7 +1662,7 @@ input, select, textarea {
 		
 @media (max-width: 800px) {
 	#main article {
-		width: 70vw;
+		width: 85vw;
 		font-size: 60%;
 	}
 	
