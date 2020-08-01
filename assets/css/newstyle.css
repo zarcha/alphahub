@@ -1,25 +1,39 @@
 #navbtn {
-	padding-right: 18%; 
 	height: 3vw; 
 	width: 3vw; 
 	text-align: center; 
-	line-height: 0px; 
+	line-height: 3vw;
 	margin-bottom: 1.5vh; 
-	margin-left: 0.5vw; 
+	margin-left: 1vw; 
 	opacity: 90%;
 }
 
+#navcontainer {
+	left: 0.3vw; 
+	top: 3vw; 
+	position: absolute; 
+	opacity: 95%;
+}
 
 
 @media (max-width: 800px) {
 	#navbtn {
-		padding-left: 25%; 
-		height: 12vw; 
-		width: 12vw; 
+		height: 6vw; 
+		width: 6vw; 
 		text-align: center; 
-		line-height: 0px; 
-		margin-bottom: 1.5vh; 
-		margin-left: 0.5vw; 
+		line-height: 6vw;
+		margin-bottom: 0.5vh; 
+		margin-left: 2vw; 
+		opacity: 90%;
 		font-size: 140%;
 	}
+	
+	#navcontainer {
+		left: 0.1vw; 
+		top: 4vw; 
+		position: absolute; 
+		opacity: 95%;
+	}
+
+
 }
