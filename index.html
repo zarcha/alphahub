@@ -29,8 +29,8 @@
 				<!-- nav -->
 				<div id="navcontainer" >
 					<div id="navbtn" onclick="clicked()">☰</div>
-<!-- 					<button id="navbtn" class="w3-button" style="" onclick="clicked()"><span onclick="clicked()">☰</span></button>
- -->					<!-- Sidebar -->
+					
+					<!-- Sidebar -->
 					<div class="" style="display:none" id="mySidebar">					  
 					  
 					  <a href="join.html" class="w3-bar-item w3-button">JOIN</a>
@@ -44,11 +44,9 @@
 				</div>
 
 				<div style="z-index: 9; position: absolute;">
-
 					<!-- Header -->
 						<header id="header">
 							<div class="logo">
-								<!-- <img src = "images/smico.png" style="width: 4vw; padding-top: 2vh; padding-right: 0.2vw;"/> -->
 								<span> <img src = "images/smico.png" style="width: 75%; padding-top: 12.5%; padding-right: 3.3%;" /></span>
 							</div>
 							<div class="content">
@@ -446,9 +444,9 @@
 					<a href="https://discord.gg/znkvcMV" target="_blank"> DISCORD</a> | 
 					<a href="https://www.youtube.com/channel/UCVhqDpRSMrWf4gnybAt5vww"target="_blank">YOUTUBE</a> | 
 					<a href="https://twitter.com/Alpha92017320" target="_blank">TWITTER</a> |
-					<a href="" target="_blank">JOIN</a> | 
-					<a href="" target="_blank">GUIDE</a> |
-					<a href="" target="_blank">DONWLOADS</a> 
+					<a href="join" target="_blank">JOIN</a> | 
+					<a href="Guide" target="_blank">GUIDE</a> |
+					<a href="downloads" target="_blank">DONWLOADS</a> 
 					</p>
 				</div>
 				</div>
@@ -466,7 +464,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
+				
+				
+			
 				function clicked() {
+					console.log("clicked");
 					var d = document.getElementById("navbtn");
 					if(d.innerHTML.includes("X")) {
 						w3_close();
@@ -474,6 +476,10 @@
 						w3_open();
 					}
 				}
+				
+				var btn = document.getElementById("navbtn");
+				
+				btn.addEventListener('click', clicked());
 			
 				function w3_open() {
 				  document.getElementById("mySidebar").style.display = "block";
