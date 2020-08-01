@@ -13,12 +13,13 @@
 
 @media (max-width: 800px) {
 	#navbtn {
-		padding-left: 27%; 
-		height: 8vw; 
-		width: 8vw; 
+		padding-left: 25%; 
+		height: 12vw; 
+		width: 12vw; 
 		text-align: center; 
 		line-height: 0px; 
 		margin-bottom: 1.5vh; 
 		margin-left: 0.5vw; 
+		font-size: 140%;
 	}
 }
