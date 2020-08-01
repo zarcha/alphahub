@@ -1,0 +1,24 @@
+#navbtn {
+	padding-right: 18%; 
+	height: 3vw; 
+	width: 3vw; 
+	text-align: center; 
+	line-height: 0px; 
+	margin-bottom: 1.5vh; 
+	margin-left: 0.5vw; 
+	opacity: 90%;
+}
+
+
+
+@media (max-width: 800px) {
+	#navbtn {
+		padding-left: 27%; 
+		height: 8vw; 
+		width: 8vw; 
+		text-align: center; 
+		line-height: 0px; 
+		margin-bottom: 1.5vh; 
+		margin-left: 0.5vw; 
+	}
+}
