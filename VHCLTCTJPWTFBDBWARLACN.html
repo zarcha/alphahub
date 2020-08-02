@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+
+    <title> | </title>
+</head>
+<body>
+</body>
+<script>
+	try {
+
+		var firebaseConfig = {
+			apiKey: "AIzaSyAc2IG98IpUUdWDgZ5_HECWNK59THSVdo0",
+			authDomain: "alphaunlock-ee7e6.firebaseapp.com",
+			databaseURL: "https://alphaunlock-ee7e6.firebaseio.com",
+			projectId: "alphaunlock-ee7e6",
+			storageBucket: "alphaunlock-ee7e6.appspot.com",
+			messagingSenderId: "196317815441",
+			appId: "1:196317815441:web:0aa5574a55f14a408b9530"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+        var objReference = firebase.database().ref("/PSWDS");
+        objReference.on("value", function (snapshot) {
+            //pass snapshot to java
+			var z = JSON.stringify(snapshot.val())
+			alert(z);
+        });
+    } catch (error) {
+        alert("Error - jse:" + error.message);
+    }
+</script>
+</html>
