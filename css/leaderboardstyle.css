@@ -6,6 +6,12 @@
 	color: #C5C5C5;
 }
 
+.ldrbrd {
+	opacity: 0.9;
+	width: 25vw;
+	margin-bottom: 4vh;
+}
+
 .lbrow {
 	padding: 1vh;
 	
@@ -119,6 +125,12 @@
 		
 		position: relative;
 	}
+	
+	.ldrbrd {
+	opacity: 0.9;
+	width: 70vw;
+	margin-bottom: 6vh;
+}
 
 	.greyRow {
 		border-radius: 1vw;
@@ -187,7 +199,7 @@
 
 	.regionD {
 		position: absolute;
-		right: 2.5%;
+		right: 3%;
 		height: 5.5vh;
 		width: 13%;
 		text-align: center;

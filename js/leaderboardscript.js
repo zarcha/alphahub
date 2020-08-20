@@ -203,7 +203,18 @@ points from mons (sum result for each mon, discredit locked mons)
 
 ex
 tamer stats: W 10, L 6, D 0
-((10) * (10/6)) = 33.3
+((10) * (10/6)) * 2 = 33.3
+
+mons: (2)
+s1 - w 4, l 1, d 0, days 6
+s2 - w 6, l 5, d 0, days 4
+
+(((4) * (4/1))/2) + (6/2) = 11
+(((6) * (6/5))/2) + (4/2) = 5.6
+
+33.3+11+5.6 = 49.9 = 50 total points
+
+
 
 
 */
