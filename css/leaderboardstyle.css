@@ -133,12 +133,12 @@
 }
 
 	.greyRow {
-		border-radius: 2vw;
+		border-radius: 2.2vh;
 	}
 
 	#one:hover, #two:hover, #three:hover, #four:hover {
 		width: 90vw;
-		border-radius: 2vh;
+		border-radius: 2.2vh;
 		background-color: #C63209;
 	}
 	.greyRow:hover {
@@ -150,22 +150,22 @@
 	#one {
 		width: 85vw;
 		background-color: #BC2800;
-		border-radius: 2vh;
+		border-radius: 2.2vh;
 	}
 	#two {
 		width: 85vw;
 		background-color: #962709;
-		border-radius: 2vw;
+		border-radius: 2.2vh;
 	}
 	#three {
 		width: 85vw;
 		background-color: #6F2512;
-		border-radius: 2vw;
+		border-radius: 2.2vh;
 	}
 	#four {
 		width: 85vw;
 		background-color: #49241A;
-		border-radius: 2vw;
+		border-radius: 2.2vh;
 	}
 	
 	
