@@ -1,0 +1,52 @@
+
+#content {
+	width:100%;
+	display: flex;
+	justify-content: center;
+	color: #C5C5C5;
+}
+
+#columnone {
+
+}
+
+.lbrow {
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 1vw;
+	width: 32vw;
+	height: 9vh;
+	transition: 0.1s;	
+	margin-bottom: -1.6vw;
+	
+	position: relative;
+}
+
+#one:hover, #two:hover, #three:hover, #four:hover {
+	width: 38vw;
+	
+	background-color: #C63209;
+}
+#odd:hover, #even:hover {
+	width: 35vw;
+	height: 9.5vh;
+	background: rgb(50, 50, 50);
+	background: linear-gradient(0deg, rgba(50,50,50,1) 0%, rgba(50,50,50,1) 100%);
+}
+
+#one {
+	width: 35vw;
+	background-color: #BC2800;
+}
+#two {
+	width: 35vw;
+	background-color: #962709;
+}
+#three {
+	width: 35vw;
+	background-color: #6F2512;
+}
+#four {
+	width: 35vw;
+	background-color: #49241A;
+}
