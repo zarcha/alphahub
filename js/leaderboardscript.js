@@ -1,9 +1,9 @@
 var numOfRows;
 var usersJSONText = '{"users":[' +
 '{"name":"Katsu","rank":"B", "wins":"10", "loss":"10", "draw":"10" },' +
+'{"name":"Zarch","rank":"A", "wins":"10", "loss":"10", "draw":"10" },' +
 '{"name":"RayJT","rank":"A", "wins":"10", "loss":"10", "draw":"10" },' +
 '{"name":"Fatred","rank":"A", "wins":"10", "loss":"10", "draw":"10" },' +
-'{"name":"Zarch","rank":"A", "wins":"10", "loss":"10", "draw":"10" },' +
 '{"name":"KaseyJoes","rank":"B", "wins":"10", "loss":"10", "draw":"10" },' +
 '{"name":"Airdramon","rank":"A", "wins":"10", "loss":"10", "draw":"10" },' +
 
@@ -190,3 +190,20 @@ function onReleaseRowStyleChange(x) {
 	x.style.zIndex = lastIndex;
 	return;
 }
+
+
+/*
+
+points from tamer stats
+((wins+draws) * win:loss ratio)*2 +
+
+points from mons (sum result for each mon, discredit locked mons)
+(((mon wins+draws) * mon win:loss ratio) / numberOfMons) + ageInDays/2
+
+
+ex
+tamer stats: W 10, L 6, D 0
+((10) * (10/6)) = 33.3
+
+
+*/
