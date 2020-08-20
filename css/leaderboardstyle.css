@@ -13,40 +13,101 @@
 .lbrow {
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 1vw;
+	
 	width: 32vw;
 	height: 9vh;
 	transition: 0.1s;	
-	margin-bottom: -1.6vw;
+	margin-bottom: -0.9vw;
 	
 	position: relative;
 }
 
+.greyRow {
+	border-radius: 1vw;
+}
+
 #one:hover, #two:hover, #three:hover, #four:hover {
 	width: 38vw;
-	
+	border-radius: 1vw;
 	background-color: #C63209;
 }
-#odd:hover, #even:hover {
+.greyRow:hover {
 	width: 35vw;
 	height: 9.5vh;
-	background: rgb(50, 50, 50);
-	background: linear-gradient(0deg, rgba(50,50,50,1) 0%, rgba(50,50,50,1) 100%);
 }
 
 #one {
 	width: 35vw;
 	background-color: #BC2800;
+	border-radius: 1vw;
 }
 #two {
 	width: 35vw;
 	background-color: #962709;
+	border-bottom-right-radius: 1vw;
+	border-bottom-left-radius: 1vw;
 }
 #three {
 	width: 35vw;
 	background-color: #6F2512;
+	border-bottom-right-radius: 1vw;
+	border-bottom-left-radius: 1vw;
 }
 #four {
 	width: 35vw;
 	background-color: #49241A;
+	border-bottom-right-radius: 1vw;
+	border-bottom-left-radius: 1vw;
+}
+
+@media only screen and (max-width: 800px) {
+	.lbrow {
+		margin-left: auto;
+		margin-right: auto;
+		
+		width: 70vw;
+		height: 5vh;
+		transition: 0.1s;	
+		margin-bottom: -0.9vw;
+		
+		position: relative;
+	}
+
+	.greyRow {
+		border-radius: 1vw;
+	}
+
+	#one:hover, #two:hover, #three:hover, #four:hover {
+		width: 90vw;
+		border-radius: 1vw;
+		background-color: #C63209;
+	}
+	.greyRow:hover {
+		width:  75vw;
+		height: 9.5vh;
+	}
+
+	#one {
+		width: 85vw;
+		background-color: #BC2800;
+		border-radius: 1vw;
+	}
+	#two {
+		width: 85vw;
+		background-color: #962709;
+		border-bottom-right-radius: 1vw;
+		border-bottom-left-radius: 1vw;
+	}
+	#three {
+		width: 85vw;
+		background-color: #6F2512;
+		border-bottom-right-radius: 1vw;
+		border-bottom-left-radius: 1vw;
+	}
+	#four {
+		width: 85vw;
+		background-color: #49241A;
+		border-bottom-right-radius: 1vw;
+		border-bottom-left-radius: 1vw;
+	}
 }
