@@ -41,10 +41,12 @@ for(i = 0; index > 0; index--) {
 	grey.className += " greyRow";
 	grey.style.zIndex = index;
 	
-	//grey.style.background = "linear-gradient(356deg, rgba(39,39,39,1) 40%, rgba(40,40,40,1) 50%)";
 	grey.style.backgroundColor = "#292929";
 	grey.style.boxShadow = "0px 0.15vh 0.8vh 0px rgba(0,0,0,0.25)";
-	grey.innerHTML = "<br><br>wow";
+	grey.style.fontSize = grey.style.height+"px";
+	
+	grey.innerHTML = "wow";
+
 	
 	grey.onmouseover = function() {onHoverRowStyleChange(this)};
 	grey.onmouseout = function() {onReleaseRowStyleChange(this)};
@@ -58,6 +60,10 @@ for(i = 0; index > 0; index--) {
 function populateFirstFour(arrayEveryone) {
 	if(arrayEveryone.length > 0) {
 		var rowOne = document.getElementById("one");
+		rowOne.innerHTML =
+			"#1 | " + arrayEveryone[0].name + " | " + arrayEveryone[0].rank;
+			
+		rowOne.style.fontSize = rowOne.style.height+"px";
 		
 	}
 	if(arrayEveryone.length > 1) {
