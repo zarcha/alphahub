@@ -6,10 +6,6 @@
 	color: #C5C5C5;
 }
 
-#columnone {
-
-}
-
 .lbrow {
 	padding: 1vh;
 	
@@ -21,9 +17,11 @@
 	transition: 0.1s;	
 	margin-bottom: -0.9vw;
 	
-	font-size:4vh;
+	font-size:3vh;
 	
 	position: relative;
+	
+	display: flex;
 }
 
 .greyRow {
@@ -65,6 +63,46 @@
 	border-bottom-right-radius: 1vw;
 	border-bottom-left-radius: 1vw;
 }
+
+
+.regionA {
+	height: 5.5vh;
+	width: 13%;
+	text-align: center;
+	padding: 0.5vh 0 0.5vh 0;
+}
+
+.regionB {
+	height: 5.5vh;
+	width: 53.2%;
+	margin-left: 2%;
+	text-align: left;
+	padding: 0.5vh 0 0.5vh 0;
+}
+
+.regionC {
+	height: 5.5vh;
+	width: 16%;
+	margin-left: 1.5%;
+	text-align: center;
+	padding: 0.5vh 0 0.5vh 0;
+}
+
+.regionD {
+	position: absolute;
+	right: 1.5%;
+	height: 5.5vh;
+	width: 13%;
+	text-align: center;
+	padding: 0.5vh 0 0.5vh 0;
+}
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 800px) {
 	.lbrow {
