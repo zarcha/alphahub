@@ -138,7 +138,7 @@
 
 	#one:hover, #two:hover, #three:hover, #four:hover {
 		width: 90vw;
-		border-radius: 2vw;
+		border-radius: 3vh;
 		background-color: #C63209;
 	}
 	.greyRow:hover {
@@ -150,25 +150,31 @@
 	#one {
 		width: 85vw;
 		background-color: #BC2800;
-		border-radius: 2vw;
+		border-radius: 3vh;
 	}
 	#two {
 		width: 85vw;
 		background-color: #962709;
-		border-bottom-right-radius: 2vw;
-		border-bottom-left-radius: 2vw;
+		border-top-right-radius: 1vh;
+		border-top-left-radius: 1vh;
+		border-bottom-right-radius: 3vh;
+		border-bottom-left-radius: 3vh;
 	}
 	#three {
 		width: 85vw;
 		background-color: #6F2512;
-		border-bottom-right-radius: 2vw;
-		border-bottom-left-radius: 2vw;
+		border-top-right-radius: 1vh;
+		border-top-left-radius: 1vh;
+		border-bottom-right-radius: 3vh;
+		border-bottom-left-radius: 3vh;
 	}
 	#four {
 		width: 85vw;
 		background-color: #49241A;
-		border-bottom-right-radius: 2vw;
-		border-bottom-left-radius: 2vw;
+		border-top-right-radius: 1vh;
+		border-top-left-radius: 1vh;
+		border-bottom-right-radius: 3vh;
+		border-bottom-left-radius: 3vh;
 	}
 	
 	
