@@ -22,7 +22,7 @@ function getLeaderboard() {
 
 	console.log(window.screen.width);
 
-	var dur = (window.screen.width < 810) ? 3000: 1600;
+	var dur = (window.screen.width < 810) ? 4000: 1600;
 	setTimeout(function() { 
 		orderBoard();
 		refactorBoard();
