@@ -20,11 +20,14 @@ function getLeaderboard() {
 	  console.error('Error while fetching ParseObjects', error);
 	});
 
+	console.log(window.screen.width);
+
+	var dur = (window.screen.width < 810) ? 3000: 1600;
 	setTimeout(function() { 
 		orderBoard();
 		refactorBoard();
 		populateData();
-	}, 1500);
+	}, dur);
 }
 
 function orderBoard() {
