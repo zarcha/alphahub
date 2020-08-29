@@ -30,10 +30,25 @@ var rows = [];
 // === GENERAL ===
 var count = 0;
 
+function temp() {
+	db.collection("Users").get().then(function(querySnapshot) {
+		
+		querySnapshot.forEach(function(doc) {
+			var entry = [doc.id, getRank(doc), getScore(doc), getCommTypes(doc)];
+			rows.push(entry);
+		});
+	});
+
+	setTimeout(function() { 
+		orderRows(); 
+		console.log(rows[0]);
+	}, 1000);
+}
+
 function grab() {
 	db.collection("Users").get().then(function(querySnapshot) {
 		querySnapshot.forEach(function(doc) {
-			var entry = [doc.id, getRank(doc), getScore(doc)];
+			var entry = [doc.id, getRank(doc), getScore(doc), getCommTypes(doc)];
 			rows.push(entry);
 		});
 	});
@@ -68,6 +83,7 @@ function postRows() {
 			entry.set("Rank", rows[i][1]);
 			entry.set("Score", ""+rows[i][2]);
 			entry.set("Order", ""+i);
+			entry.set("CommTypes", ""+rows[i][3]);
 
 		entry.save();
 	}
@@ -187,6 +203,19 @@ function getRank(doc) {
 	else return "E";
 }
 
+function getPartnerMon(doc){
+	var slot = getpartner(doc);
+
+	switch(getCommType(slot)) {
+		case 1: 
+			break;
+		case 3:
+			break;
+		case 7:
+			break;
+	}
+}
+
 function getPartner(doc) {
 	var slots = [(isObjValid(doc.data().r1) ? doc.data().r1 : ""),
 				(isObjValid(doc.data().r2) ? doc.data().r2 : ""),
@@ -216,6 +245,37 @@ function getTamerLoss(doc) {
 }
 function getTamerDraw(doc) {
 	return (isObjValid(doc.data().drw)) ? parseInt(doc.data().drw, 36) : 0;	
+}
+
+function getCommTypes(doc) {
+	var cts = "000000000000000";
+	var rec = "";
+	var slots = [doc.data().r1,
+		doc.data().r2,
+		doc.data().r3,
+		doc.data().r4,
+		doc.data().r5,
+		doc.data().r6];
+
+	
+	slots.forEach(function(slot) {
+		if(slot != ("")) {
+			switch(getCommType(slot)) {
+				case 1:
+					cts = cts.substring(0, 14) + "1";
+					break;
+				case 3:
+					cts = cts.substring(0, 13) + "1" + cts.substring(14);
+					break;
+				case 7:
+					cts = cts.substring(0,12) + "1" + cts.substring(13);
+					break;
+				default: break;
+			}
+		}
+	});
+
+	return  parseInt(cts, 2).toString(32);
 }
 
 
@@ -248,6 +308,12 @@ function slotAge(slot) {
 	return Math.floor((((dateNow - birthDate)/1000) / (3600))/24);
 }
 
+
+function getCommType(slot) {
+	var ct = slot.substring(109, 111);
+	return parseInt(ct, 36);
+}
+
 function getSlotEncounters(slot) {
 	return 	getSlotWins(slot) +
 			getSlotLoss(slot) +
@@ -263,9 +329,16 @@ function getSlotDraw(slot) {
 	return parseInt(slot.substring(107, 109), 36);
 }
 
+// === RomManager ===
+
 
 // === EXTRA ===
 function isObjValid(check) {
 	if(check == null || check == 'undefined' || check == "") return false;
 	else return true;
+}
+
+function leadingZeros(str, length) {
+	for(var i = str.length; i<length; i++) str = "0"+str;
+	return str;
 }

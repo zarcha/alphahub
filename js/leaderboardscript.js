@@ -20,8 +20,6 @@ function getLeaderboard() {
 	  console.error('Error while fetching ParseObjects', error);
 	});
 
-	console.log(window.screen.width);
-
 	var dur = (window.screen.width < 810) ? 4000: 1600;
 	setTimeout(function() { 
 		orderBoard();
@@ -53,7 +51,7 @@ function refactorBoard() {
 	var rows = [];
 
 	for(var i = 0; i<ldrbrd.length; i++) {
-		row = [ldrbrd[i].attributes.Name, ldrbrd[i].attributes.Rank, parseInt(ldrbrd[i].attributes.Score), parseInt(ldrbrd[i].attributes.Order)];
+		row = [ldrbrd[i].attributes.Name, ldrbrd[i].attributes.Rank, parseInt(ldrbrd[i].attributes.Score), parseInt(ldrbrd[i].attributes.Order), parseInt(ldrbrd[i].attributes.CommTypes)];
 		rows.push(row);
 	}
 
@@ -82,7 +80,7 @@ function genStyle() {
 		var dur = ((ldrbrd.length - i) * 0.2);
 		var rule = 	".f"+(i)+ " {opacity: 0; animation: fadeIn ease 1.1s; "+
 					"animation-fill-mode: forwards; animation-delay: "+ dur +"s; }";
-		console.log(rule);
+		//console.log(rule);
 		sheet.sheet.insertRule(rule);
 	}
 
@@ -103,7 +101,8 @@ function populateFirstFour() {
 		var regionA = document.createElement('div'),
 			regionB = document.createElement('div'),
 			regionC = document.createElement('div'),
-			regionD = document.createElement('div');
+			regionD = document.createElement('div'),
+			regionE = document.createElement('div');
 			
 		regionA.innerHTML = "#1";
 		regionA.className = "regionA";
@@ -118,6 +117,37 @@ function populateFirstFour() {
 		regionD.innerHTML = ldrbrd[0][2];
 		regionD.className = "regionD";
 			
+		regionE.className = "regionE";
+
+		var flags = leadingZeros(ldrbrd[0][4].toString(2), 15);
+		console.log("fl", flags);
+
+		if(flags.substring(12, 13) == "1") {
+			// DMOG
+			var pill = document.createElement("div");
+			pill.id = "dmogpill";
+			pill.className = "pill";
+			pill.innerHTML = "DMOG";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(13, 14) == "1") {
+			// DM20
+			var pill = document.createElement("div");
+			pill.id = "dmtpill";
+			pill.className = "pill";
+			pill.innerHTML = "DM20";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(14, 15) == "1") {
+			// Pen20
+			var pill = document.createElement("div");
+			pill.id = "pentpill";
+			pill.className = "pill";
+			pill.innerHTML = "Pen20";
+			regionE.appendChild(pill);
+		}
+		
+		one.appendChild(regionE);
 		one.appendChild(regionA);
 		one.appendChild(regionB);
 		one.appendChild(regionC);
@@ -136,7 +166,8 @@ function populateFirstFour() {
 		var regionA = document.createElement('div'),
 			regionB = document.createElement('div'),
 			regionC = document.createElement('div'),
-			regionD = document.createElement('div');
+			regionD = document.createElement('div'),
+			regionE = document.createElement('div');
 			
 		regionA.innerHTML = "#2";
 		regionA.className = "regionA";
@@ -152,6 +183,37 @@ function populateFirstFour() {
 		regionD.innerHTML = ldrbrd[1][2];
 		regionD.className = "regionD";
 			
+		regionE.className = "regionE";
+
+		var flags = leadingZeros(ldrbrd[1][4].toString(2), 15);
+		console.log("fl", flags);
+
+		if(flags.substring(12, 13) == "1") {
+			// DMOG
+			var pill = document.createElement("div");
+			pill.id = "dmogpill";
+			pill.className = "pill";
+			pill.innerHTML = "DMOG";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(13, 14) == "1") {
+			// DM20
+			var pill = document.createElement("div");
+			pill.id = "dmtpill";
+			pill.className = "pill";
+			pill.innerHTML = "DM20";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(14, 15) == "1") {
+			// Pen20
+			var pill = document.createElement("div");
+			pill.id = "pentpill";
+			pill.className = "pill";
+			pill.innerHTML = "Pen20";
+			regionE.appendChild(pill);
+		}
+		
+		two.appendChild(regionE);
 		two.appendChild(regionA);
 		two.appendChild(regionB);
 		two.appendChild(regionC);
@@ -170,7 +232,8 @@ function populateFirstFour() {
 		var regionA = document.createElement('div'),
 			regionB = document.createElement('div'),
 			regionC = document.createElement('div'),
-			regionD = document.createElement('div');
+			regionD = document.createElement('div'),
+			regionE = document.createElement('div');
 			
 		regionA.innerHTML = "#3";
 		regionA.className = "regionA";
@@ -185,6 +248,38 @@ function populateFirstFour() {
 		
 		regionD.innerHTML = ldrbrd[2][2];
 		regionD.className = "regionD";
+
+		regionE.className = "regionE";
+	
+		var flags = leadingZeros(ldrbrd[0][4].toString(2), 15);
+		console.log("fl", flags);
+
+		if(flags.substring(12, 13) == "1") {
+			// DMOG
+			var pill = document.createElement("div");
+			pill.id = "dmogpill";
+			pill.className = "pill";
+			pill.innerHTML = "DMOG";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(13, 14) == "1") {
+			// DM20
+			var pill = document.createElement("div");
+			pill.id = "dmtpill";
+			pill.className = "pill";
+			pill.innerHTML = "DM20";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(14, 15) == "1") {
+			// Pen20
+			var pill = document.createElement("div");
+			pill.id = "pentpill";
+			pill.className = "pill";
+			pill.innerHTML = "Pen20";
+			regionE.appendChild(pill);
+		}
+		
+		three.appendChild(regionE);
 			
 		three.appendChild(regionA);
 		three.appendChild(regionB);
@@ -204,7 +299,8 @@ function populateFirstFour() {
 		var regionA = document.createElement('div'),
 			regionB = document.createElement('div'),
 			regionC = document.createElement('div'),
-			regionD = document.createElement('div');
+			regionD = document.createElement('div'),
+			regionE = document.createElement('div');
 			
 		regionA.innerHTML = "#4";
 		regionA.className = "regionA";
@@ -219,6 +315,38 @@ function populateFirstFour() {
 		
 		regionD.innerHTML = ldrbrd[3][2];
 		regionD.className = "regionD";
+
+		regionE.className = "regionE";
+	
+		var flags = leadingZeros(ldrbrd[0][4].toString(2), 15);
+		console.log("fl", flags);
+
+		if(flags.substring(12, 13) == "1") {
+			// DMOG
+			var pill = document.createElement("div");
+			pill.id = "dmogpill";
+			pill.className = "pill";
+			pill.innerHTML = "DMOG";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(13, 14) == "1") {
+			// DM20
+			var pill = document.createElement("div");
+			pill.id = "dmtpill";
+			pill.className = "pill";
+			pill.innerHTML = "DM20";
+			regionE.appendChild(pill);
+		}
+		if(flags.substring(14, 15) == "1") {
+			// Pen20
+			var pill = document.createElement("div");
+			pill.id = "pentpill";
+			pill.className = "pill";
+			pill.innerHTML = "Pen20";
+			regionE.appendChild(pill);
+		}
+		
+		four.appendChild(regionE);
 			
 		four.appendChild(regionA);
 		four.appendChild(regionB);
@@ -246,7 +374,8 @@ function appendGreys() {
 			var	regionA = document.createElement('div'),
 				regionB = document.createElement('div'),
 				regionC = document.createElement('div'),
-				regionD = document.createElement('div');
+				regionD = document.createElement('div'),
+				regionE = document.createElement('div');
 				
 			regionA.innerHTML = "#"+(numOfRows-index +1);
 			regionA.className = "regionA";
@@ -259,6 +388,38 @@ function appendGreys() {
 			
 			regionD.innerHTML = ldrbrd[numOfRows - index][2];
 			regionD.className = "regionD";
+
+			regionE.className = "regionE";
+	
+			var flags = leadingZeros(ldrbrd[numOfRows - index][4].toString(2), 15);
+			console.log("fl", flags);
+
+			if(flags.substring(12, 13) == "1") {
+				// DMOG
+				var pill = document.createElement("div");
+				pill.id = "dmogpill";
+				pill.className = "pill";
+				pill.innerHTML = "DMOG";
+				regionE.appendChild(pill);
+			}
+			if(flags.substring(13, 14) == "1") {
+				// DM20
+				var pill = document.createElement("div");
+				pill.id = "dmtpill";
+				pill.className = "pill";
+				pill.innerHTML = "DM20";
+				regionE.appendChild(pill);
+			}
+			if(flags.substring(14, 15) == "1") {
+				// Pen20
+				var pill = document.createElement("div");
+				pill.id = "pentpill";
+				pill.className = "pill";
+				pill.innerHTML = "Pen20";
+				regionE.appendChild(pill);
+			}
+			
+			grey.appendChild(regionE);
 				
 			grey.appendChild(regionA);
 			grey.appendChild(regionB);
@@ -276,13 +437,12 @@ function appendGreys() {
 }
 
 
-
-
-
-
 function onHoverRowStyleChange(x) {
 	lastIndex = x.style.zIndex;
 	x.style.zIndex = 2000000;
+
+	var e = x.childNodes[0];
+	e.style.opacity = "1";
 	
 	//console.log(x.id);
 	return;
@@ -290,5 +450,14 @@ function onHoverRowStyleChange(x) {
 
 function onReleaseRowStyleChange(x) {
 	x.style.zIndex = lastIndex;
+
+	var e = x.childNodes[0];
+	e.style.opacity = "0";
+
 	return;
+}
+
+function leadingZeros(str, length) {
+	for(var i = str.length; i<length; i++) str = "0"+str;
+	return str;
 }
