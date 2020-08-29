@@ -267,6 +267,7 @@
 	}
 
 	.pill {
+		padding-bottom: 0.05vw;
 		padding-left: 1vw;
 		padding-right: 1vw;
 
@@ -275,7 +276,7 @@
 		margin-right: 1vw;
 
 		text-align: center;
-		font-size: 4vw;
+		font-size: 3vw;
 		color: white;
 		float: left;
 	}
