@@ -174,10 +174,10 @@
 	}
 	
 	.ldrbrd {
-	opacity: 0.9;
-	width: 70vw;
-	margin-bottom: 3vh;
-}
+		opacity: 0.9;
+		width: 70vw;
+		margin-bottom: 3vh;
+	}
 
 	.greyRow {
 		border-radius: 2vh;
@@ -248,5 +248,49 @@
 		width: 13%;
 		text-align: center;
 		padding: 0.5vh 0 0.5vh 0;
+	}
+
+		
+	.regionE {
+		width: 85vw;
+		height: 28%;
+
+		position: absolute;
+		bottom: 0.1vw;
+		right: 1vw;
+		left: 2vw;
+		
+		z-index: 99999;
+
+		opacity: 0;
+		transition: 0.5s;
+	}
+
+	.pill {
+		padding-bottom: 0.075vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+
+		height: 90%;
+		border-radius: 1vw;
+		margin-right: 1vw;
+
+		text-align: center;
+		font-size: 2vw;
+		color: white;
+		float: left;
+	}
+
+	#dmtpill {
+		background-color: #f2933a;
+	}
+	#pentpill {
+		background-color: #309de6;
+	}
+	#dmogpill {
+		background-color: #69cfd1;
+	}
+	#dmxpill {
+		background-color: #b15dde;
 	}
 }
