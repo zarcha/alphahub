@@ -1,13 +1,13 @@
 // === FIREBASE ===
 var firebaseConfig = {
-    apiKey: "AIzaSyB5-2Llg6g6_n2Qa1JPP4rXowm7g6_0Ppg",
-    authDomain: "alphalinkthree.firebaseapp.com",
-    databaseURL: "https://alphalinkthree.firebaseio.com",
-    projectId: "alphalinkthree",
-    storageBucket: "alphalinkthree.appspot.com",
-    messagingSenderId: "375908105880",
-    appId: "1:375908105880:web:1f5f9f53f81be4a0cfdaed"
-  };
+    apiKey: "AIzaSyDYGLh6DGth87_fSSUjISlPrYZcZsnSCxE",
+    authDomain: "alpha-link-beta.firebaseapp.com",
+    databaseURL: "https://alpha-link-beta.firebaseio.com",
+    projectId: "alpha-link-beta",
+    storageBucket: "alpha-link-beta.appspot.com",
+    messagingSenderId: "568898366266",
+    appId: "1:568898366266:web:3da44acc1e50265bc6be03"
+};
 // Initialize Firebase
 var app = firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore(app);
@@ -259,7 +259,7 @@ function getCommTypes(doc) {
 
 	
 	slots.forEach(function(slot) {
-		if(slot != ("")) {
+		if(slot != ("") && typeof slot !== "undefined") {
 			switch(getCommType(slot)) {
 				case 1:
 					cts = cts.substring(0, 14) + "1";
