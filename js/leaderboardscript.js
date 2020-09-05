@@ -1,4 +1,4 @@
-let apiServer = "http://104.248.224.184:1027/api"
+let apiServer = "https://104.248.224.184:1027/api"
 //let apiServer = "http://localhost:1027/api"
 var ldrbrd = [];
 getLeaderboard();
