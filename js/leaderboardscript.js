@@ -1,8 +1,5 @@
-// === PARSE ===
-Parse.initialize("Tew1hHlIFyCFDgfbL37oSQkLymLjUKaKPpCs9oRp", "BoA8tvIZZtUzTFNjDvnGm34zKF6SpDJ6I3OByQkB"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
-Parse.serverURL = "https://parseapi.back4app.com/";
-var parseLeaderboard = new Parse.User();
-const Leaderboard = Parse.Object.extend("leaderboard");
+let apiServer = "http://104.248.224.184:1027/api"
+//let apiServer = "http://localhost:1027/api"
 var ldrbrd = [];
 getLeaderboard();
 
@@ -11,52 +8,38 @@ var lastIndex, index;
 var fadeIns = document.createElement('style');
 
 
-function getLeaderboard() {
-	const query = new Parse.Query(Leaderboard);
-
-	query.find().then((results) => {
-		ldrbrd = results;
-	}, (error) => {
-	  console.error('Error while fetching ParseObjects', error);
-	});
-
-	var dur = (window.screen.width < 810) ? 4000: 1600;
-	setTimeout(function() { 
+async function getLeaderboard() {
+	try{
+		let response = await fetch(apiServer + "/getUsers");
+		ldrbrd = await response.json();
+		ldrbrd = ldrbrd.users;
+		
 		orderBoard();
+		ldrbrd = ldrbrd.slice(0, 100);
 		refactorBoard();
 		populateData();
-	}, dur);
+	}
+	catch(error){
+		console.log(error);
+	}
 }
 
 function orderBoard() {
-	var swapped = true;
-
-	while(swapped) {
-		swapped = false;
-		for(var i = 0; i<ldrbrd.length-1; i++) {
-			var iScore = parseInt(ldrbrd[i].attributes.Order),
-				nextScore = parseInt(ldrbrd[i+1].attributes.Order);
-
-			if(iScore > nextScore) {
-				swapped = true;
-				console.log("s");
-				var a = ldrbrd[i];
-				ldrbrd[i]  = ldrbrd[i+1] ;
-				ldrbrd[i+1] = a;
-			}
-		}
-	}
+	ldrbrd.sort((a,b) => b.stats.score - a.stats.score)
 }
 function refactorBoard() {
 	var rows = [];
 
 	for(var i = 0; i<ldrbrd.length; i++) {
-		row = [ldrbrd[i].attributes.Name, ldrbrd[i].attributes.Rank, parseInt(ldrbrd[i].attributes.Score), parseInt(ldrbrd[i].attributes.Order), parseInt(ldrbrd[i].attributes.CommTypes)];
+		if(ldrbrd[i].name == "RedPV") {
+			console.log("RED", ldrbrd[i].stats);
+		}
+		row = [ldrbrd[i].name, ldrbrd[i].stats.rank, parseInt(ldrbrd[i].stats.score), 0, parseInt(ldrbrd[i].commTypes)];
 		rows.push(row);
 	}
 
 	ldrbrd = rows;
-	console.log(ldrbrd);
+	//console.log(ldrbrd);
 
 }
 
@@ -120,7 +103,7 @@ function populateFirstFour() {
 		regionE.className = "regionE";
 
 		var flags = leadingZeros(ldrbrd[0][4].toString(2), 15);
-		console.log("fl", flags);
+		//console.log("fl", flags);
 
 		if(flags.substring(12, 13) == "1") {
 			// DMOG
@@ -186,7 +169,7 @@ function populateFirstFour() {
 		regionE.className = "regionE";
 
 		var flags = leadingZeros(ldrbrd[1][4].toString(2), 15);
-		console.log("fl", flags);
+		//console.log("fl", flags);
 
 		if(flags.substring(12, 13) == "1") {
 			// DMOG
@@ -252,7 +235,7 @@ function populateFirstFour() {
 		regionE.className = "regionE";
 	
 		var flags = leadingZeros(ldrbrd[0][4].toString(2), 15);
-		console.log("fl", flags);
+		//console.log("fl", flags);
 
 		if(flags.substring(12, 13) == "1") {
 			// DMOG
@@ -319,7 +302,7 @@ function populateFirstFour() {
 		regionE.className = "regionE";
 	
 		var flags = leadingZeros(ldrbrd[0][4].toString(2), 15);
-		console.log("fl", flags);
+		//console.log("fl", flags);
 
 		if(flags.substring(12, 13) == "1") {
 			// DMOG
@@ -392,7 +375,7 @@ function appendGreys() {
 			regionE.className = "regionE";
 	
 			var flags = leadingZeros(ldrbrd[numOfRows - index][4].toString(2), 15);
-			console.log("fl", flags);
+			//console.log("fl", flags);
 
 			if(flags.substring(12, 13) == "1") {
 				// DMOG
